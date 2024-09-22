@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="car-nation-intro" style="display: flex; align-items: center;">
+    <div class="left-text" style="flex: 1; padding: 20px;">
+        <h1 style="color: rgb(32, 10, 83);">Welcome to Car Nation!</h1>
+        <p>Your one-stop destination for buying the perfect car! At CAR NATION, we connect you with a wide range of vehicles that fit your needs and budget.</p>
+        <p>Join thousands of satisfied customers who have found their perfect vehicle with us. Experience exceptional customer service and support at every step.</p>
+    </div>
+    <div class="right-image" style="flex: 1;">
+        <img src="{% static 'homepage_pic.jpg' %}" alt="Car Image" style="max-width: 100%; height: auto;">
+    </div>
+</div>
+<hr>
+
+
+<div class="container p-5">
+    <h5>All Brands : </h5>
+    <div class="d-flex flex-wrap justify-content-center gap-4">
+        <a href="{%url 'homepage' %}" class="btn btn-info text-white"> All </a>
+        {% for brand in brands %}
+            <a href="{% url 'catagory_wise_post' brand.slug %}" class="btn btn-info text-white">{{brand.name}}</a>
+        {% endfor %}
+    </div>
+</div>
+<hr>
+
+
+<!-- cars posts  -->
+
+<div class="col-10 p-3">
+    <h4>{{data | length }} results found</h4>
+    <div class="d-flex flex-wrap ">
+      {% for cars in data %}
+      <div class="card m-3 col-3">
+          <div class="card-body text-center">
+            <img src="{{cars.image.url}}" class="card-img-top mb-2" alt="...">
+            <h4 class="card-title ">{{cars.name}}</h4>
+            <p class="card-text "><h2>Brand : {{cars.brand.name}} </h2></p>
+            <p class="card-text "><b class="btn btn-secondary text-white fs-5"> ${{cars.price}}</b></p>
+            <a href="{% url 'details' cars.id %}" class="btn btn-info m-auto" style="text-decoration: none;">Details</a>
+          </div>
+      </div>
+      {% endfor %}
+    <div>
+</div>
+
+{% endblock %}
