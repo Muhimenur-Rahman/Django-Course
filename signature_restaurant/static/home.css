@@ -1,0 +1,19 @@
+.home_box {
+    background-color: rgba(189, 189, 189, 0.606);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+.slogan{
+    color: rgb(68, 156, 151);
+}
+
+.left, .right {
+    flex: 1;
+}
+
+.right img {
+    width: 100%;
+    height: auto;
+}

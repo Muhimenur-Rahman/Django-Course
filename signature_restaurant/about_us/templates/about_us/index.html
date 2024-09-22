@@ -1,0 +1,33 @@
+{% extends "base.html"%}
+
+{% load static %}
+
+{% block link %}
+   <link rel="stylesheet" href="{% static 'about_us.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="home_box row d-flex">
+    <div class="left col-6 ">
+        <h1 class="slogan text-center">Discover Signature Restaurant</h1>
+        <p>"Welcome to Signature Design, where culinary artistry meets exceptional dining.
+             At Signature Design, we pride ourselves on creating unforgettable dining experiences 
+             through a fusion of innovative cuisine and elegant ambiance. Our team of skilled chefs
+              crafts each dish with the finest ingredients, ensuring every meal is a masterpiece.
+            Founded on the principles of creativity, quality, and exceptional service, Signature Design
+             is more than just a restaurant—it’s a destination for those who appreciate the art of fine
+              dining. From our meticulously designed menu to our thoughtfully curated atmosphere, every detail
+               is designed to delight and inspire.
+            Join us at Signature Design to experience a culinary journey that celebrates the art of dining.
+             For more information or to make a reservation, please contact us at [contact information]. 
+             We look forward to welcoming you!
+            Feel free to personalize the text further to better reflect the unique aspects of your
+             restaurant!"</p>
+    </div>
+    <div class="right col-6 d-flex align-items-center justify-content-center">
+        <img src="{% static 'about_us.png' %}" alt="Restaurant Image" class="rest_pic img-fluid">
+    </div>
+</div>
+
+{% endblock %}

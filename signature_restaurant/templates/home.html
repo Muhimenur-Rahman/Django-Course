@@ -1,0 +1,25 @@
+{% extends "base.html"%}
+
+{% load static %}
+
+{% block link %}
+   <link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock %}
+
+
+{% block content %}
+<div class="home_box row d-flex">
+    <div class="left col-6 ">
+        <h1 class="slogan text-center">"Welcome to Signature Restaurant. <br> A Culinary Experience Like No Other"</h1>
+        <p>"At Signature Restaurant, we blend exquisite flavors with a warm and inviting 
+            atmosphere to create a dining experience you'll never forget. Whether you're here
+             for a casual meal, a special celebration, or just a quick bite, our carefully 
+             crafted dishes and exceptional service will leave you coming back for more. Join us and savor 
+             the taste of freshness, creativity, and passion on every plate."</p>
+    </div>
+    <div class="right col-6 d-flex align-items-center justify-content-center">
+        <img src="{% static 'restaurant.jpg' %}" alt="Restaurant Image" class="rest_pic img-fluid">
+    </div>
+</div>
+
+{% endblock %}
