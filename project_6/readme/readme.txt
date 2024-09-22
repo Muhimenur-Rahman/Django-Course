@@ -1,0 +1,1 @@
+ model, admin database and delete option from frontend
